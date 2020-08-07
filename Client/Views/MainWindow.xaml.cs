@@ -38,6 +38,11 @@ namespace Client.Views
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
+            if (DateInput.SelectedDate > (DateInput.DisplayDateStart.Value.AddDays(9)))
+            {
+                DateInput.SelectedDate = DateInput.DisplayDateStart.Value.AddDays(9);
+            }
+
             List<WeatherRecord> records;
             weatherPanel.Children.Clear();
             try
